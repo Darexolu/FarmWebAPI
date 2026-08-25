@@ -8,8 +8,10 @@
 		public string Description { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }
-		public long CompanyId { get; set; }
-		public long BranchId { get; set; }
+		public int CompanyId { get; set; }
+		public Company Company { get; set; }
+		public int BranchId { get; set; }
+		public Branch Branch { get; set; }
 		public byte[] RowVersion { get; set; } = default;
 
     }
