@@ -30,9 +30,36 @@ namespace FarmWebAPI.AppDatabase
 				WithMany()
 				.HasForeignKey(b => b.CompanyId)
 				.IsRequired(false);
-		}
+			builder.Entity<ApplicationUser>().
+				HasOne(b => b.CreatedBy).
+				WithMany()
+				.HasForeignKey(b => b.CreatedById)
+				.IsRequired(false);
+			builder.Entity<ApplicationUser>().
+				HasOne(b => b.ModifiedBy).
+				WithMany()
+				.HasForeignKey(b => b.ModifiedById)
+				.IsRequired(false);
+			builder.Entity<ApplicationUser>().
+				HasOne(b => b.DeletedBy).
+				WithMany()
+				.HasForeignKey(b => b.DeletedById)
+				.IsRequired(false);
+			builder.Entity<CostCenter>()
+        	.HasKey(c => new { c.BusinessUnitId, c.DepartmentId });
 
+		}
+		
+		public DbSet<ApplicationRole> ApplicationRoles { get; set; }
 		public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+		public DbSet<LoginHistory> LoginHistories { get; set; }
+		public DbSet<PasswordHistory> PasswordHistories { get; set; }
+		public DbSet<Permission> Permissions { get; set; }
+		public DbSet<RolePermission> RolePermissions { get; set; }
+		public DbSet<Attachment> Attachments { get; set; }
+		public DbSet<CostCenter> CostCenters { get; set; }
+		public DbSet<Language> Languages { get; set; }
+		public DbSet<SystemSetting> SystemSettings { get; set; }
 		public DbSet<Company> Companies { get; set; }
 		public DbSet<Branch> Branches { get; set; }
 		public DbSet<Department> Departments { get; set; }
@@ -41,7 +68,7 @@ namespace FarmWebAPI.AppDatabase
 		public DbSet<Country> Countries { get; set; }
 		public DbSet<State> States { get; set; }
 		public DbSet<City> Cities { get; set; }
-		public DbSet<ApplicationRole> ApplicationRoles { get; set; }
+		
 
 	}
 

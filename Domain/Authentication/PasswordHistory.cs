@@ -8,5 +8,7 @@
 		public string PasswordHash { get; set; } = string.Empty;
 		public DateTime ChangedOn { get; set; }
 		public DateTime ExpiryDate { get; set;}
+		public bool IsCurrentPassword { get; set; }
 	}
 }
+
