@@ -37,6 +37,11 @@ namespace FarmWebAPI.AppDatabase
 		public DbSet<Branch> Branches { get; set; }
 		public DbSet<Department> Departments { get; set; }
 		public DbSet<BusinessUnit> BusinessUnits { get; set; }
+		public DbSet<Location> Locations { get; set; }
+		public DbSet<Country> Countries { get; set; }
+		public DbSet<State> States { get; set; }
+		public DbSet<City> Cities { get; set; }
+		public DbSet<ApplicationRole> ApplicationRoles { get; set; }
 
 	}
 

@@ -3,13 +3,14 @@
 	public class Department : AuditableEntity
 	{
 
-		public long BranchId { get; set; }
+		public int BranchId { get; set; }
 		public Branch Branch { get; set; }
 		public string Email { get; set; } = string.Empty;
 		public string PhoneNumber { get; set; } = string.Empty;
-		public long ParentDepartmentId { get; set; }
+		public int ParentDepartmentId { get; set; }
 		public Department ParentDepartment { get; set; }
-
 		public bool IsOperational { get; set; } = true;
+		public decimal AnnualBudget { get; set; }
+		public string BudgetCode { get; set; }
 	}
 }
