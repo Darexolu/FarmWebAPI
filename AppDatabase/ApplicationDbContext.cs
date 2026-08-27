@@ -1,5 +1,7 @@
-﻿using FarmWebAPI.Domain.Authentication;
+using FarmWebAPI.Domain.Authentication;
 using FarmWebAPI.Domain.Common;
+using FarmWebAPI.Domain.Farm;
+using FarmWebAPI.Domain.Farmer;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -68,7 +70,21 @@ namespace FarmWebAPI.AppDatabase
 		public DbSet<Country> Countries { get; set; }
 		public DbSet<State> States { get; set; }
 		public DbSet<City> Cities { get; set; }
-		
+	    public DbSet<Currency> Currencies { get; set; }
+		public DbSet<CompanyContact> CompanyContacts { get; set; }
+		public DbSet<CompanyBankAccount> CompanyBankAccounts { get; set; }
+		public DbSet<CompanyDocument> CompanyDocuments { get; set; }
+		public DbSet<CompanyHoliday> CompanyHolidays { get; set; }
+		public DbSet<SystemCodeDetail> SystemCodeDetails { get; set; }
+		public DbSet<SystemCode> SystemCodes { get; set; }
+		public DbSet<FarmerDetail> FarmerDetails { get; set; }
+		public DbSet<FarmerContact> FarmerContacts { get; set; }
+		public DbSet<FarmerDocument> FarmerDocuments { get; set; }
+		public DbSet<FarmerBankAccount> FarmerBankAccounts { get; set; }
+		public DbSet<FarmLease> FarmLeases { get; set; }
+		public DbSet<Farm> Farms { get; set; }
+		public DbSet<FarmOwnership> FarmOwnerships { get; set; }
+
 
 	}
 

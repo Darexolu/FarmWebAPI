@@ -23,9 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Authentication\" />
-    <Folder Include="Domain\Farmer\" />
-    <Folder Include="Domain\Farm\" />
     <Folder Include="Domain\Crop\" />
     <Folder Include="Domain\Livestock\" />
     <Folder Include="Domain\Inventory\" />
