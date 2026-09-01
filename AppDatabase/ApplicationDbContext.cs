@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FarmWebAPI.AppDatabase
 {
-	public class ApplicationDbContext : IdentityDbContext
+	public class ApplicationDbContext : IdentityDbContext<ApplicationUser,  ApplicationRole, string>
 	{
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
 		{
@@ -54,6 +54,7 @@ namespace FarmWebAPI.AppDatabase
 		
 		public DbSet<ApplicationRole> ApplicationRoles { get; set; }
 		public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+		public DbSet<RefreshToken> RefreshTokens { get; set; }
 		public DbSet<LoginHistory> LoginHistories { get; set; }
 		public DbSet<PasswordHistory> PasswordHistories { get; set; }
 		public DbSet<Permission> Permissions { get; set; }
